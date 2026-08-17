@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    direction: rtl;
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+}
+
+/* Custom Print Styles */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 8mm;
+  }
+  
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 10pt;
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Page 1: Calendar Grid layout */
+  .print-page-1 {
+    page-break-after: always;
+    break-after: page;
+    height: 98vh !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  .calendar-grid-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .calendar-grid {
+    flex-grow: 1;
+    grid-template-rows: repeat(6, 1fr) !important;
+    gap: 1px !important;
+    border: 1px solid #cbd5e1 !important;
+  }
+
+  .day-cell {
+    min-height: 0 !important;
+    height: 100% !important;
+    border: 1px solid #e2e8f0 !important;
+    padding: 2px 4px !important;
+    font-size: 9pt !important;
+  }
+
+  /* Page 2: Summary Table */
+  .print-page-2 {
+    page-break-before: always;
+    break-before: page;
+    margin-top: 0 !important;
+    padding-top: 10px !important;
+  }
+}

@@ -1,0 +1,461 @@
+[
+  {
+    "id": "legacy_1",
+    "title": "יום הולדת לאפרת",
+    "personName": "אפרת",
+    "type": "birthday",
+    "hebrewDay": 11,
+    "hebrewMonth": "Tishrei",
+    "notes": "לפי לוח מרגלית (חודש 1 - תשרי)"
+  },
+  {
+    "id": "legacy_2",
+    "title": "יום הולדת ללהב",
+    "personName": "להב",
+    "type": "birthday",
+    "hebrewDay": 1,
+    "hebrewMonth": "Cheshvan",
+    "notes": "לפי לוח מרגלית (חודש 2 - חשון)"
+  },
+  {
+    "id": "legacy_3",
+    "title": "יום הולדת לידידיה",
+    "personName": "ידידיה",
+    "type": "birthday",
+    "hebrewDay": 24,
+    "hebrewMonth": "Cheshvan",
+    "notes": "לפי לוח מרגלית (חודש 2 - חשון)"
+  },
+  {
+    "id": "legacy_4",
+    "title": "יום הולדת לאיתן",
+    "personName": "איתן",
+    "type": "birthday",
+    "hebrewDay": 14,
+    "hebrewMonth": "Nisan",
+    "notes": "לפי לוח מרגלית (חודש 7 - ניסן)"
+  },
+  {
+    "id": "legacy_5",
+    "title": "יום הולדת למוריה",
+    "personName": "מוריה",
+    "type": "birthday",
+    "hebrewDay": 12,
+    "hebrewMonth": "Nisan",
+    "notes": "לפי לוח מרגלית (חודש 7 - ניסן)"
+  },
+  {
+    "id": "legacy_6",
+    "title": "יום הולדת לליאור",
+    "personName": "ליאור",
+    "type": "birthday",
+    "hebrewDay": 3,
+    "hebrewMonth": "Kislev",
+    "notes": "לפי לוח מרגלית (חודש 3 - כסלו)"
+  },
+  {
+    "id": "legacy_7",
+    "title": "יום הולדת לנוגה",
+    "personName": "נוגה",
+    "type": "birthday",
+    "hebrewDay": 28,
+    "hebrewMonth": "Kislev",
+    "notes": "לפי לוח מרגלית (חודש 3 - כסלו)"
+  },
+  {
+    "id": "legacy_8",
+    "title": "יום הולדת לבת-אל",
+    "personName": "בת-אל",
+    "type": "birthday",
+    "hebrewDay": 20,
+    "hebrewMonth": "Av",
+    "notes": "לפי לוח מרגלית (חודש 11 - אב)"
+  },
+  {
+    "id": "legacy_9",
+    "title": "יום הולדת לרפי",
+    "personName": "רפי",
+    "type": "birthday",
+    "hebrewDay": 23,
+    "hebrewMonth": "Kislev",
+    "notes": "לפי לוח מרגלית (חודש 3 - כסלו)"
+  },
+  {
+    "id": "legacy_10",
+    "title": "יום הולדת לחביבה",
+    "personName": "חביבה",
+    "type": "birthday",
+    "hebrewDay": 15,
+    "hebrewMonth": "Sh'vat",
+    "notes": "לפי לוח מרגלית (חודש 5 - שבט)"
+  },
+  {
+    "id": "legacy_11",
+    "title": "יום הולדת לאחי סעדיה",
+    "personName": "סעדיה",
+    "type": "birthday",
+    "hebrewDay": 12,
+    "hebrewMonth": "Adar",
+    "notes": "לפי לוח מרגלית (חודש 6 - אדר)"
+  },
+  {
+    "id": "legacy_12",
+    "title": "יום הולדת לשוש אלעזר",
+    "personName": "שוש אלעזר",
+    "type": "birthday",
+    "hebrewDay": 16,
+    "hebrewMonth": "Adar",
+    "notes": "לפי לוח מרגלית (חודש 6 - אדר)"
+  },
+  {
+    "id": "legacy_13",
+    "title": "יום הולדת לשולמית",
+    "personName": "שולמית",
+    "type": "birthday",
+    "hebrewDay": 22,
+    "hebrewMonth": "Adar",
+    "notes": "לפי לוח מרגלית (חודש 6 - אדר)"
+  },
+  {
+    "id": "legacy_14",
+    "title": "יום הולדת לשולמית (אדר א')",
+    "personName": "שולמית",
+    "type": "birthday",
+    "hebrewDay": 22,
+    "hebrewMonth": "Adar I",
+    "notes": "לפי לוח מרגלית (חודש 13 - אדר א')"
+  },
+  {
+    "id": "legacy_15",
+    "title": "יום הולדת לאחותי מזל",
+    "personName": "מזל",
+    "type": "birthday",
+    "hebrewDay": 3,
+    "hebrewMonth": "Nisan",
+    "notes": "לפי לוח מרגלית (חודש 7 - ניסן)"
+  },
+  {
+    "id": "legacy_16",
+    "title": "יום הולדת להלל שמש",
+    "personName": "הלל שמש",
+    "type": "birthday",
+    "hebrewDay": 1,
+    "hebrewMonth": "Tevet",
+    "notes": "לפי לוח מרגלית (חודש 4 - טבת)"
+  },
+  {
+    "id": "legacy_17",
+    "title": "יום הולדת לאוהד",
+    "personName": "אוהד",
+    "type": "birthday",
+    "hebrewDay": 21,
+    "hebrewMonth": "Tevet",
+    "notes": "לפי לוח מרגלית (חודש 4 - טבת)"
+  },
+  {
+    "id": "legacy_18",
+    "title": "יום הולדת לנעמי",
+    "personName": "נעמי",
+    "type": "birthday",
+    "hebrewDay": 10,
+    "hebrewMonth": "Elul",
+    "notes": "לפי לוח מרגלית (חודש 12 - אלול)"
+  },
+  {
+    "id": "legacy_19",
+    "title": "יום הולדת לעפר",
+    "personName": "עפר",
+    "type": "birthday",
+    "hebrewDay": 29,
+    "hebrewMonth": "Sivan",
+    "notes": "לפי לוח מרגלית (חודש 9 - סיון)"
+  },
+  {
+    "id": "legacy_20",
+    "title": "יום הולדת לשיר-אל",
+    "personName": "שיר-אל",
+    "type": "birthday",
+    "hebrewDay": 22,
+    "hebrewMonth": "Tevet",
+    "notes": "לפי לוח מרגלית (חודש 4 - טבת)"
+  },
+  {
+    "id": "legacy_21",
+    "title": "יום הולדת לאביה",
+    "personName": "אביה",
+    "type": "birthday",
+    "hebrewDay": 5,
+    "hebrewMonth": "Tamuz",
+    "notes": "לפי לוח מרגלית (חודש 10 - תמוז)"
+  },
+  {
+    "id": "legacy_22",
+    "title": "יום הולדת לאריאל",
+    "personName": "אריאל",
+    "type": "birthday",
+    "hebrewDay": 28,
+    "hebrewMonth": "Iyyar",
+    "notes": "לפי לוח מרגלית (חודש 8 - אייר)"
+  },
+  {
+    "id": "legacy_23",
+    "title": "יום הולדת לאיילת",
+    "personName": "איילת",
+    "type": "birthday",
+    "hebrewDay": 8,
+    "hebrewMonth": "Tevet",
+    "notes": "לפי לוח מרגלית (חודש 4 - טבת)"
+  },
+  {
+    "id": "legacy_24",
+    "title": "יום הולדת לרנן-שמש",
+    "personName": "רנן-שמש",
+    "type": "birthday",
+    "hebrewDay": 23,
+    "hebrewMonth": "Sh'vat",
+    "notes": "לפי לוח מרגלית (חודש 5 - שבט)"
+  },
+  {
+    "id": "legacy_25",
+    "title": "יום הולדת לנריה",
+    "personName": "נריה",
+    "type": "birthday",
+    "hebrewDay": 25,
+    "hebrewMonth": "Sh'vat",
+    "notes": "לפי לוח מרגלית (חודש 5 - שבט)"
+  },
+  {
+    "id": "legacy_26",
+    "title": "יום הולדת לשילת-אידה",
+    "personName": "שילת-אידה",
+    "type": "birthday",
+    "hebrewDay": 14,
+    "hebrewMonth": "Tevet",
+    "notes": "לפי לוח מרגלית (חודש 4 - טבת)"
+  },
+  {
+    "id": "legacy_27",
+    "title": "יום הולדת לאלי",
+    "personName": "אלי",
+    "type": "birthday",
+    "hebrewDay": 8,
+    "hebrewMonth": "Av",
+    "notes": "לפי לוח מרגלית (חודש 11 - אב)"
+  },
+  {
+    "id": "legacy_28",
+    "title": "יום הולדת לאביטל",
+    "personName": "אביטל",
+    "type": "birthday",
+    "hebrewDay": 19,
+    "hebrewMonth": "Av",
+    "notes": "לפי לוח מרגלית (חודש 11 - אב)"
+  },
+  {
+    "id": "legacy_29",
+    "title": "יום הולדת לנסיה",
+    "personName": "נסיה",
+    "type": "birthday",
+    "hebrewDay": 14,
+    "hebrewMonth": "Cheshvan",
+    "notes": "לפי לוח מרגלית (חודש 2 - חשון)"
+  },
+  {
+    "id": "legacy_30",
+    "title": "יום הולדת לשיר-הלל",
+    "personName": "שיר-הלל",
+    "type": "birthday",
+    "hebrewDay": 27,
+    "hebrewMonth": "Elul",
+    "notes": "לפי לוח מרגלית (חודש 12 - אלול)"
+  },
+  {
+    "id": "legacy_31",
+    "title": "יום נישואין אפרת ולהב",
+    "personName": "אפרת ולהב",
+    "type": "anniversary",
+    "hebrewDay": 24,
+    "hebrewMonth": "Elul",
+    "notes": "לפי לוח מרגלית (חודש 12 - אלול)"
+  },
+  {
+    "id": "legacy_32",
+    "title": "יום נישואין חביבה ורפי",
+    "personName": "חביבה ורפי",
+    "type": "anniversary",
+    "hebrewDay": 6,
+    "hebrewMonth": "Elul",
+    "notes": "לפי לוח מרגלית (חודש 12 - אלול)"
+  },
+  {
+    "id": "legacy_33",
+    "title": "יום נישואין נעמי ועפר",
+    "personName": "נעמי ועפר",
+    "type": "anniversary",
+    "hebrewDay": 24,
+    "hebrewMonth": "Sh'vat",
+    "notes": "לפי לוח מרגלית (חודש 5 - שבט)"
+  },
+  {
+    "id": "legacy_34",
+    "title": "יום נישואין איילת ואלי (אדר ב')",
+    "personName": "איילת ואלי",
+    "type": "anniversary",
+    "hebrewDay": 27,
+    "hebrewMonth": "Adar II",
+    "notes": "לפי לוח מרגלית (חודש 14 - אדר ב')"
+  },
+  {
+    "id": "legacy_35",
+    "title": "יום נישואין איילת ואלי",
+    "personName": "איילת ואלי",
+    "type": "anniversary",
+    "hebrewDay": 27,
+    "hebrewMonth": "Adar",
+    "notes": "לפי לוח מרגלית (חודש 6 - אדר)"
+  },
+  {
+    "id": "legacy_36",
+    "title": "אזכרה סבא צדוק",
+    "personName": "סבא צדוק",
+    "type": "yahrzeit",
+    "hebrewDay": 29,
+    "hebrewMonth": "Nisan",
+    "notes": "לפי לוח מרגלית (חודש 7 - ניסן)"
+  },
+  {
+    "id": "legacy_37",
+    "title": "אזכרה לניסים בסיס",
+    "personName": "ניסים בסיס",
+    "type": "yahrzeit",
+    "hebrewDay": 5,
+    "hebrewMonth": "Sh'vat",
+    "notes": "לפי לוח מרגלית (חודש 5 - שבט)"
+  },
+  {
+    "id": "legacy_38",
+    "title": "אזכרה לדודה סעדה",
+    "personName": "דודה סעדה",
+    "type": "yahrzeit",
+    "hebrewDay": 6,
+    "hebrewMonth": "Sh'vat",
+    "notes": "לפי לוח מרגלית (חודש 5 - שבט)"
+  },
+  {
+    "id": "legacy_39",
+    "title": "אזכרה ליוסף נטף",
+    "personName": "יוסף נטף",
+    "type": "yahrzeit",
+    "hebrewDay": 25,
+    "hebrewMonth": "Cheshvan",
+    "notes": "לפי לוח מרגלית (חודש 2 - חשון)"
+  },
+  {
+    "id": "legacy_40",
+    "title": "אזכרה דודה צביה",
+    "personName": "דודה צביה",
+    "type": "yahrzeit",
+    "hebrewDay": 21,
+    "hebrewMonth": "Cheshvan",
+    "notes": "לפי לוח מרגלית (חודש 2 - חשון)"
+  },
+  {
+    "id": "legacy_41",
+    "title": "אזכרה רבקה חתוכה",
+    "personName": "רבקה חתוכה",
+    "type": "yahrzeit",
+    "hebrewDay": 9,
+    "hebrewMonth": "Tevet",
+    "notes": "לפי לוח מרגלית (חודש 4 - טבת)"
+  },
+  {
+    "id": "legacy_42",
+    "title": "אזכרה דוד סעדיה",
+    "personName": "דוד סעדיה",
+    "type": "yahrzeit",
+    "hebrewDay": 27,
+    "hebrewMonth": "Sh'vat",
+    "notes": "לפי לוח מרגלית (חודש 5 - שבט)"
+  },
+  {
+    "id": "legacy_43",
+    "title": "אזכרה למזל בסיס",
+    "personName": "מזל בסיס",
+    "type": "yahrzeit",
+    "hebrewDay": 29,
+    "hebrewMonth": "Adar",
+    "notes": "לפי לוח מרגלית (חודש 6 - אדר)"
+  },
+  {
+    "id": "legacy_44",
+    "title": "אזכרה למזל בסיס (אדר ב')",
+    "personName": "מזל בסיס",
+    "type": "yahrzeit",
+    "hebrewDay": 29,
+    "hebrewMonth": "Adar II",
+    "notes": "לפי לוח מרגלית (חודש 14 - אדר ב')"
+  },
+  {
+    "id": "legacy_45",
+    "title": "אזכרה סבא שמעון",
+    "personName": "סבא שמעון",
+    "type": "yahrzeit",
+    "hebrewDay": 1,
+    "hebrewMonth": "Iyyar",
+    "notes": "לפי לוח מרגלית (חודש 8 - אייר)"
+  },
+  {
+    "id": "legacy_46",
+    "title": "אזכרה סבתא אידה",
+    "personName": "סבתא אידה",
+    "type": "yahrzeit",
+    "hebrewDay": 13,
+    "hebrewMonth": "Tamuz",
+    "notes": "לפי לוח מרגלית (חודש 10 - תמוז)"
+  },
+  {
+    "id": "legacy_47",
+    "title": "אזכרה לרויטל חתוכה ז\"ל",
+    "personName": "רויטל חתוכה ז\"ל",
+    "type": "yahrzeit",
+    "hebrewDay": 22,
+    "hebrewMonth": "Adar",
+    "notes": "לפי לוח מרגלית (חודש 6 - אדר)"
+  },
+  {
+    "id": "legacy_48",
+    "title": "אזכרה לרויטל חתוכה ז\"ל (אדר ב')",
+    "personName": "רויטל חתוכה ז\"ל",
+    "type": "yahrzeit",
+    "hebrewDay": 22,
+    "hebrewMonth": "Adar II",
+    "notes": "לפי לוח מרגלית (חודש 14 - אדר ב')"
+  },
+  {
+    "id": "legacy_49",
+    "title": "אזכרה דוד שלמה טירי",
+    "personName": "דוד שלמה טירי",
+    "type": "yahrzeit",
+    "hebrewDay": 9,
+    "hebrewMonth": "Elul",
+    "notes": "לפי לוח מרגלית (חודש 12 - אלול)"
+  },
+  {
+    "id": "legacy_50",
+    "title": "אזכרה לדניאל בסיס",
+    "personName": "דניאל בסיס",
+    "type": "yahrzeit",
+    "hebrewDay": 18,
+    "hebrewMonth": "Av",
+    "notes": "לפי לוח מרגלית (חודש 11 - אב)"
+  },
+  {
+    "id": "legacy_51",
+    "title": "אזכרה סבתא אומה",
+    "personName": "סבתא אומה",
+    "type": "yahrzeit",
+    "hebrewDay": 19,
+    "hebrewMonth": "Tamuz",
+    "notes": "לפי לוח מרגלית (חודש 10 - תמוז)"
+  }
+]

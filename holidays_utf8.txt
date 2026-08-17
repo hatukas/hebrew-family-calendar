@@ -1,0 +1,10 @@
+var Holidays = Array(
+		// תשרי
+		new Holiday( 1,1,1,'ראש השנה','yomtov' ),
+		new Holiday( 2,1,1,'ראש השנה','yomtov' ),
+		new Holiday( 3,1,'dow!=7','צום גדליה','sadday'),
+		new Holiday( 4,1,'year<2005&&dow==1','צום גדליה (נדחה)','sadday'),
+		new Holiday( 4,1,'year>2004&&dow==1','צום גדליה (נדחה)<br><span class="info">שעון חורף</span>','sadday'),
+		new Holiday( 6,1,'year>2004&&dow==1','שעון חורף','info'),
+		new Holiday( 7,1,'year>2004&&dow==1','שעון חורף','info'),
+		new Holiday( 9,1,'yea
