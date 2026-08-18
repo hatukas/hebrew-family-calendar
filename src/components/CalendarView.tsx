@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { HDate } from '@hebcal/core';
+import { toPng } from 'html-to-image';
 import {
   getHolidaysForHDate,
   getHebrewMonthNameHe,
@@ -20,6 +21,7 @@ import {
   Calendar as CalendarIcon,
   RotateCcw,
   Trash2,
+  Copy,
 } from 'lucide-react';
 
 export const CalendarView: React.FC = () => {
@@ -38,6 +40,9 @@ export const CalendarView: React.FC = () => {
 
   // File Upload Ref for Import
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const calendarCaptureRef = useRef<HTMLDivElement>(null);
+  const [isCopyingImage, setIsCopyingImage] = useState(false);
+  const [imageCopied, setImageCopied] = useState(false);
 
   // Month navigation handlers
   const handlePrevMonth = () => {
@@ -187,6 +192,34 @@ export const CalendarView: React.FC = () => {
     }
   };
 
+  const handleCopyCalendarImage = async () => {
+    if (!calendarCaptureRef.current || !navigator.clipboard || typeof ClipboardItem === 'undefined') {
+      alert('הדפדפן אינו תומך בהעתקת תמונות. ניתן להשתמש בכפתור ההדפסה כדי לשמור את הלוח.');
+      return;
+    }
+
+    setIsCopyingImage(true);
+    setImageCopied(false);
+
+    try {
+      const dataUrl = await toPng(calendarCaptureRef.current, {
+        backgroundColor: '#ffffff',
+        pixelRatio: 2,
+        cacheBust: true,
+      });
+      const response = await fetch(dataUrl);
+      const blob = await response.blob();
+      await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+      setImageCopied(true);
+      window.setTimeout(() => setImageCopied(false), 2500);
+    } catch (error) {
+      console.error('Failed to copy calendar image:', error);
+      alert('לא ניתן היה להעתיק את הלוח כתמונה. נסה שוב.');
+    } finally {
+      setIsCopyingImage(false);
+    }
+  };
+
   const currentMonthOnlyDays = daysGrid.filter(d => d.isCurrentMonth);
 
   return (
@@ -219,6 +252,16 @@ export const CalendarView: React.FC = () => {
             >
               <Plus className="w-4 h-4" />
               אירוע חדש
+            </button>
+
+            <button
+              onClick={handleCopyCalendarImage}
+              disabled={isCopyingImage}
+              className="flex items-center gap-1.5 px-3 py-2 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-60 disabled:cursor-wait text-white text-sm font-semibold rounded-xl shadow-sm transition"
+              title="העתקת הלוח הנראה כתמונה לשליחה בוואטסאפ"
+            >
+              <Copy className="w-4 h-4" />
+              {isCopyingImage ? 'מכין תמונה...' : imageCopied ? 'התמונה הועתקה' : 'העתק כתמונה'}
             </button>
 
             <button
@@ -319,7 +362,10 @@ export const CalendarView: React.FC = () => {
           <h2 className="text-base text-slate-600">{gregorianMonthTitle}</h2>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-xs border border-slate-200 overflow-hidden calendar-grid-container">
+        <div
+          ref={calendarCaptureRef}
+          className="bg-white rounded-2xl shadow-xs border border-slate-200 overflow-hidden calendar-grid-container"
+        >
           
           {/* Day Names Header */}
           <div className="grid grid-cols-7 bg-slate-800 text-white text-center font-bold text-xs sm:text-sm py-2">
