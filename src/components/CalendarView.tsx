@@ -202,6 +202,7 @@ export const CalendarView: React.FC = () => {
     setImageCopied(false);
 
     try {
+      await new Promise<void>(resolve => requestAnimationFrame(() => resolve()));
       const dataUrl = await toPng(calendarCaptureRef.current, {
         backgroundColor: '#ffffff',
         pixelRatio: 2,
@@ -379,14 +380,14 @@ export const CalendarView: React.FC = () => {
           </div>
 
           {/* Days Cells Grid */}
-          <div className="grid grid-cols-7 calendar-grid divide-x divide-y divide-slate-100 text-right">
+          <div className="grid grid-cols-7 calendar-grid divide-x divide-y divide-slate-300 border border-slate-300 text-right">
             {daysGrid.map((day, idx) => (
               <div
                 key={idx}
                 className={`day-cell min-h-[105px] p-2 flex flex-col justify-between transition-colors relative group ${
                   !day.isCurrentMonth
                     ? 'bg-slate-50/60 text-slate-400'
-                    : day.isToday
+                    : day.isToday && !isCopyingImage
                     ? 'bg-amber-50/40 ring-2 ring-amber-400/50 inset-0 z-10'
                     : 'bg-white hover:bg-slate-50/70'
                 }`}
@@ -395,7 +396,7 @@ export const CalendarView: React.FC = () => {
                 <div className="flex items-start justify-between">
                   <span
                     className={`text-xs sm:text-sm font-extrabold px-1.5 py-0.5 rounded-md ${
-                      day.isToday
+                      day.isToday && !isCopyingImage
                         ? 'bg-amber-500 text-white'
                         : day.isCurrentMonth
                         ? 'text-slate-800'
