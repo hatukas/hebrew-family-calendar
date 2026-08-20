@@ -92,6 +92,19 @@ export function getHebrewMonthNameHe(monthName: string): string {
   return HEBREW_MONTH_NAMES_HE[monthName] || monthName;
 }
 
+export function getEventYearsElapsed(event: FamilyEvent, currentHebrewYear: number): number | undefined {
+  if (event.hebrewYear === undefined || event.hebrewYear > currentHebrewYear) {
+    return undefined;
+  }
+
+  return currentHebrewYear - event.hebrewYear;
+}
+
+export function formatEventTitle(event: FamilyEvent, currentHebrewYear: number): string {
+  const yearsElapsed = getEventYearsElapsed(event, currentHebrewYear);
+  return yearsElapsed === undefined ? event.title : `${event.title} (${yearsElapsed})`;
+}
+
 // Match if a recurring event falls on a specific HDate (handling leap year / Adar logic)
 export function isEventMatchingHDate(event: FamilyEvent, hdate: HDate): boolean {
   const currentMonthName = hdate.getMonthName();

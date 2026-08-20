@@ -5,6 +5,7 @@ import {
   getHolidaysForHDate,
   getHebrewMonthNameHe,
   isEventMatchingHDate,
+  formatEventTitle,
   toHebrewNumeral,
 } from '../utils/hebrewCalendar';
 import type { DayInfo, FamilyEvent } from '../utils/hebrewCalendar';
@@ -22,7 +23,13 @@ import {
   RotateCcw,
   Trash2,
   Copy,
+  Minus,
+  Plus as PlusIcon,
+  Type,
+  UserRound,
 } from 'lucide-react';
+
+type CalendarFontSize = 'small' | 'normal' | 'large';
 
 export const CalendarView: React.FC = () => {
   const { events, exportEventsJSON, importEventsJSON, clearAllEvents } = useEvents();
@@ -43,6 +50,26 @@ export const CalendarView: React.FC = () => {
   const calendarCaptureRef = useRef<HTMLDivElement>(null);
   const [isCopyingImage, setIsCopyingImage] = useState(false);
   const [imageCopied, setImageCopied] = useState(false);
+  const [calendarFontSize, setCalendarFontSize] = useState<CalendarFontSize>(() => {
+    const saved = localStorage.getItem('hebrew_calendar_font_size');
+    return saved === 'small' || saved === 'large' ? saved : 'normal';
+  });
+  const [showPersonNames, setShowPersonNames] = useState<boolean>(() => {
+    return localStorage.getItem('hebrew_calendar_show_person_names') !== 'false';
+  });
+
+  const handleFontSizeChange = (size: CalendarFontSize) => {
+    setCalendarFontSize(size);
+    localStorage.setItem('hebrew_calendar_font_size', size);
+  };
+
+  const handlePersonNamesChange = () => {
+    setShowPersonNames(prev => {
+      const nextValue = !prev;
+      localStorage.setItem('hebrew_calendar_show_person_names', String(nextValue));
+      return nextValue;
+    });
+  };
 
   // Month navigation handlers
   const handlePrevMonth = () => {
@@ -224,7 +251,7 @@ export const CalendarView: React.FC = () => {
   const currentMonthOnlyDays = daysGrid.filter(d => d.isCurrentMonth);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-6 print-container">
+    <div className={`max-w-7xl mx-auto px-4 py-6 print-container calendar-font-${calendarFontSize}`}>
       
       {/* Top Action Bar / Header */}
       <header className="bg-white rounded-2xl shadow-xs border border-slate-200 p-4 sm:p-6 mb-6 no-print">
@@ -249,47 +276,86 @@ export const CalendarView: React.FC = () => {
           <div className="flex flex-wrap items-center gap-2">
             <button
               onClick={() => handleOpenAddModal()}
-              className="flex items-center gap-1.5 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold rounded-xl shadow-sm transition"
+              className="p-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl shadow-sm transition"
+              aria-label="אירוע חדש"
+              title="אירוע חדש"
             >
-              <Plus className="w-4 h-4" />
-              אירוע חדש
+              <Plus className="w-5 h-5" />
             </button>
 
             <button
               onClick={handleCopyCalendarImage}
               disabled={isCopyingImage}
-              className="flex items-center gap-1.5 px-3 py-2 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-60 disabled:cursor-wait text-white text-sm font-semibold rounded-xl shadow-sm transition"
-              title="העתקת הלוח הנראה כתמונה לשליחה בוואטסאפ"
+              className="p-2.5 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-60 disabled:cursor-wait text-white rounded-xl shadow-sm transition"
+              aria-label="העתק את הלוח כתמונה"
+              title={isCopyingImage ? 'מכין תמונה...' : imageCopied ? 'התמונה הועתקה' : 'העתקת הלוח הנראה כתמונה לשליחה בוואטסאפ'}
             >
-              <Copy className="w-4 h-4" />
-              {isCopyingImage ? 'מכין תמונה...' : imageCopied ? 'התמונה הועתקה' : 'העתק כתמונה'}
+              <Copy className="w-5 h-5" />
+            </button>
+
+            <div className="flex items-center gap-1 border border-slate-200 rounded-xl p-1 bg-slate-50" aria-label="גודל כתב">
+              <Type className="w-4 h-4 text-slate-500 mx-1" />
+              <button
+                onClick={() => handleFontSizeChange('small')}
+                aria-pressed={calendarFontSize === 'small'}
+                className={`p-1.5 rounded-lg transition ${calendarFontSize === 'small' ? 'bg-white text-indigo-700 shadow-sm' : 'text-slate-500 hover:bg-white'}`}
+                title="כתב קטן"
+              >
+                <Minus className="w-4 h-4" />
+              </button>
+              <button
+                onClick={() => handleFontSizeChange('normal')}
+                aria-pressed={calendarFontSize === 'normal'}
+                className={`px-1.5 py-1 text-xs font-bold rounded-lg transition ${calendarFontSize === 'normal' ? 'bg-white text-indigo-700 shadow-sm' : 'text-slate-500 hover:bg-white'}`}
+                title="כתב רגיל"
+              >
+                א
+              </button>
+              <button
+                onClick={() => handleFontSizeChange('large')}
+                aria-pressed={calendarFontSize === 'large'}
+                className={`p-1.5 rounded-lg transition ${calendarFontSize === 'large' ? 'bg-white text-indigo-700 shadow-sm' : 'text-slate-500 hover:bg-white'}`}
+                title="כתב גדול"
+              >
+                <PlusIcon className="w-4 h-4" />
+              </button>
+            </div>
+
+            <button
+              onClick={handlePersonNamesChange}
+              aria-pressed={showPersonNames}
+              aria-label={showPersonNames ? 'הסתר שמות אנשים' : 'הצג שמות אנשים'}
+              title={showPersonNames ? 'הסתר שמות אנשים' : 'הצג שמות אנשים'}
+              className={`p-2.5 rounded-xl border transition ${showPersonNames ? 'bg-indigo-50 text-indigo-700 border-indigo-200' : 'bg-slate-100 text-slate-500 border-slate-200 hover:bg-slate-200'}`}
+            >
+              <UserRound className="w-5 h-5" />
             </button>
 
             <button
               onClick={handleClearEvents}
-              className="flex items-center gap-1.5 px-3 py-2 bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-200 text-sm font-semibold rounded-xl transition"
+              className="p-2.5 bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-200 rounded-xl transition"
+              aria-label="איפוס האירועים בלוח"
               title="מחק את כלל האירועים הקיימים בלוח"
             >
-              <Trash2 className="w-4 h-4 text-rose-600" />
-              איפוס האירועים בלוח
+              <Trash2 className="w-5 h-5 text-rose-600" />
             </button>
 
             <button
               onClick={exportEventsJSON}
-              className="flex items-center gap-1.5 px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold rounded-xl transition"
+              className="p-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl transition"
+              aria-label="ייצוא נתוני האירועים"
               title="ייצוא נתונים ל-JSON"
             >
-              <Download className="w-4 h-4" />
-              ייצוא
+              <Upload className="w-5 h-5" />
             </button>
 
             <button
               onClick={() => fileInputRef.current?.click()}
-              className="flex items-center gap-1.5 px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold rounded-xl transition"
+              className="p-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl transition"
+              aria-label="ייבוא נתוני האירועים"
               title="ייבוא נתונים מ-JSON"
             >
-              <Upload className="w-4 h-4" />
-              ייבוא
+              <Download className="w-5 h-5" />
             </button>
             <input
               type="file"
@@ -301,11 +367,11 @@ export const CalendarView: React.FC = () => {
 
             <button
               onClick={() => window.print()}
-              className="flex items-center gap-1.5 px-3 py-2 bg-slate-800 hover:bg-slate-900 text-white text-sm font-semibold rounded-xl shadow-sm transition"
+              className="p-2.5 bg-slate-800 hover:bg-slate-900 text-white rounded-xl shadow-sm transition"
+              aria-label="הדפסת לוח השנה"
               title="הדפסת לוח השנה"
             >
-              <Printer className="w-4 h-4" />
-              הדפסה
+              <Printer className="w-5 h-5" />
             </button>
           </div>
 
@@ -447,12 +513,13 @@ export const CalendarView: React.FC = () => {
                           handleOpenEditModal(evt);
                         }}
                         className={`w-full text-right text-[11px] px-1.5 py-0.5 rounded border truncate transition transform hover:scale-[1.02] block ${badgeStyle}`}
-                        title={`${evt.title} (${evt.personName || ''})`}
+                        title={`${formatEventTitle(evt, day.hdate.getFullYear())}${showPersonNames && evt.personName ? ` (${evt.personName})` : ''}`}
                       >
                         {evt.type === 'birthday' && '🎉 '}
                         {evt.type === 'anniversary' && '💍 '}
                         {evt.type === 'yahrzeit' && '🕯️ '}
-                        {evt.title}
+                        {formatEventTitle(evt, day.hdate.getFullYear())}
+                        {showPersonNames && evt.personName && <span className="font-normal mr-1">({evt.personName})</span>}
                       </button>
                     );
                   })}
@@ -480,6 +547,7 @@ export const CalendarView: React.FC = () => {
         <MonthlySummary
           currentMonthDays={currentMonthOnlyDays}
           onSelectEvent={handleOpenEditModal}
+          showPersonNames={showPersonNames}
         />
       </div>
 

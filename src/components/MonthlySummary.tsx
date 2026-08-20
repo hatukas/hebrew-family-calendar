@@ -1,14 +1,16 @@
 import React from 'react';
+import { HDate } from '@hebcal/core';
 import type { DayInfo, FamilyEvent } from '../utils/hebrewCalendar';
-import { toHebrewYearStr } from '../utils/hebrewCalendar';
+import { formatEventTitle, toHebrewYearStr } from '../utils/hebrewCalendar';
 import { Calendar as CalendarIcon, Heart, Cake, Flame, Tag } from 'lucide-react';
 
 interface MonthlySummaryProps {
   currentMonthDays: DayInfo[];
   onSelectEvent: (event: FamilyEvent) => void;
+  showPersonNames: boolean;
 }
 
-export const MonthlySummary: React.FC<MonthlySummaryProps> = ({ currentMonthDays, onSelectEvent }) => {
+export const MonthlySummary: React.FC<MonthlySummaryProps> = ({ currentMonthDays, onSelectEvent, showPersonNames }) => {
   // Aggregate ONLY family events in the month (excluding holidays)
   const items: Array<{
     date: Date;
@@ -109,8 +111,8 @@ export const MonthlySummary: React.FC<MonthlySummaryProps> = ({ currentMonthDays
                     <td className="py-3 px-4 text-indigo-900 font-medium">{item.hebrewFullStr}</td>
                     <td className="py-3 px-4">{getEventBadge(evt.type)}</td>
                     <td className="py-3 px-4 font-bold text-slate-900">
-                      {evt.title}
-                      {evt.personName && <span className="font-normal text-slate-600 mr-1.5">({evt.personName})</span>}
+                      {formatEventTitle(evt, new HDate(item.date).getFullYear())}
+                      {showPersonNames && evt.personName && <span className="font-normal text-slate-600 mr-1.5">({evt.personName})</span>}
                     </td>
                     <td className="py-3 px-4 text-slate-600 text-xs">
                       {evt.notes || '-'}

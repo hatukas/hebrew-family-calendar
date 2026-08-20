@@ -9,6 +9,36 @@
   }
 }
 
+.calendar-font-small .calendar-grid-container .day-cell > div:first-child span {
+  font-size: 0.75rem !important;
+}
+
+.calendar-font-small .calendar-grid-container .day-cell .my-1 > div,
+.calendar-font-small .calendar-grid-container .day-cell .my-1 > button {
+  font-size: 10px !important;
+}
+
+.calendar-font-large .calendar-grid-container .day-cell > div:first-child span {
+  font-size: 1rem !important;
+}
+
+.calendar-font-large .calendar-grid-container .day-cell .my-1 > div,
+.calendar-font-large .calendar-grid-container .day-cell .my-1 > button {
+  font-size: 13px !important;
+}
+
+.calendar-font-large .print-page-2 table,
+.calendar-font-large .print-page-2 table button,
+.calendar-font-large .print-page-2 table span {
+  font-size: 1.05em;
+}
+
+.calendar-font-small .print-page-2 table,
+.calendar-font-small .print-page-2 table button,
+.calendar-font-small .print-page-2 table span {
+  font-size: 0.95em;
+}
+
 /* Custom Print Styles */
 @media print {
   @page {
